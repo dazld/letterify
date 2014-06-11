@@ -4,8 +4,9 @@
   "description": "Inspired by lettering.js - a browserifiable module for doing radical web typography",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
+
   "repository": {
     "type": "git",
     "url": "git://github.com/dazld/letterify.git"
@@ -19,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/dazld/letterify/issues"
   },
-  "homepage": "https://github.com/dazld/letterify"
+  "homepage": "https://github.com/dazld/letterify",
+  "devDependencies": {
+    "gulp-qunit": "~0.2.1",
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.8.0"
+  }
 }
