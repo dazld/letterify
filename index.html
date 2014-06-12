@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>letterify test</title>
+    <style>
+        h1 {
+          font-family: Helvetica Neue;
+          font-size: 8em;
+          color: rgba(0,0,0,0.4);
+        }
+        .letterified {
+          position: relative;
+        }
+        .letterified:after {
+        content: attr(data-letter);
+        position: absolute;
+        overflow: hidden;
+        width: 66%;
+        top: -2px;
+        left: -4px;
+        color: red;
+        -webkit-transform: rotate(-3deg);
+        z-index: -3;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>This is a title</h1>
+    <script src="dev.js"></script>
+  </body>
+</html>
