@@ -3,32 +3,86 @@
   <head>
     <title>letterify test</title>
     <style>
+        * {
+          font-family: Futura;
+        }
+        #app {
+          width: 85%;
+          margin: 0 auto;
+          text-align: center;
+          min-height: 100%;
+          background: rgba(32,32,32,0.1);
+          padding: 3em;
+        }
+        h1:first-child {
+          margin-top: 0;
+        }
         h1 {
-          font-family: Helvetica Neue;
+          color: #3a3a3a;
           font-size: 8em;
-          color: rgba(0,0,0,0.4);
+          margin: 0.3rem 0;
+          
+        }
+        h2 {
+          color: #6a6a6a;
+          font-size: 2em;
+          color: black; 
+          margin: 0.3rem 0;
+          line-height: 2.4rem; 
+        }
+        p {
+          margin: 0.3rem 0;
         }
         .letterified {
           position: relative;
         }
         .letterified:after {
-        content: attr(data-letter);
-        position: absolute;
-        overflow: hidden;
-        width: 66%;
-        top: -2px;
-        left: -4px;
-        color: red;
-        -webkit-transform: rotate(-3deg);
-        z-index: -3;
+          content: attr(data-letter);
+          position: absolute;
+          overflow: hidden;
+          width: 50%;
+          top: 0;
+          left: -4px;
+          color: red;
+          -webkit-transform: rotate(-4deg);
+          z-index: -3;
+          bottom: 1px;
+        }
+
+        [data-letter=r] ~ [data-letter=a] {
+          margin-left: -0.04em;
+        }
+        [data-letter=a] ~ [data-letter=z] {
+          margin-left: -0.04em;
+        }
+        [data-letter=t] ~ [data-letter=e] {
+          margin-left: -0.04em;
+        }
+        [data-letter=e] ~ [data-letter=t] {
+          margin-left: -0.04em;
+        }
+        [data-letter=e] ~ [data-letter=r] {
+          margin-left: -0.04em;
+        }
+        [data-letter=g] ~ [data-letter=o] {
+          margin-left: -0.04em;
+        }
+        [data-letter=l] ~ [data-letter=e] {
+          margin-left: -0.04em;
+        }
+        .hidden {
+          display: none;  
         }
     </style>
   </head>
   <body>
-    <h1>letterify</h1>
-   <p>A commonJS module for doing radical web typography</p>
-
-    <h1>let's go crazy!</h1>
+    <div id="app" class="hidden">
+      <h1 class="before">letterify"</h1>
+      <p>..becomes..</p>
+      <h1 class="after">letterify"</h1>
+      <p>A commonJS module for doing radical web typography</p>
+    </div>
+    
     <script src="dev.js"></script>
   </body>
 </html>

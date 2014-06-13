@@ -1,13 +1,14 @@
-
-function letterify(userOptions){
+function letterify(userOptions) {
 	var options = {
-		selector: false
+		scope: document,
+		selector: false,
+		segmentClass: 'letterified'
 	};
 
 	if (typeof userOptions === "string") {
 		options.selector = userOptions;
-	} else if (typeof userOptions === 'object') { 
-		Object.keys(userOptions).forEach(function(key){
+	} else if (typeof userOptions === 'object') {
+		Object.keys(userOptions).forEach(function(key) {
 			options[key] = userOptions[key];
 		});
 	}
@@ -20,23 +21,24 @@ function letterify(userOptions){
 	} else {
 		selected = document.querySelector(options.selector);
 	}
-        console.log(options);
-	var elems = document.querySelectorAll(options.selector);
-        [].forEach.call(elems, function(el){
-          var split = el.textContent.split('');
-          console.log(split);
-          var frag = document.createDocumentFragment();
-          split.forEach(function(letter){
-            var span = document.createElement('span');
-            span.textContent = letter;
-            span.setAttribute('data-letter', letter);
-            span.className = 'letterified';
-            frag.appendChild(span);
-            
-          });
-          el.textContent = null;
-          el.appendChild(frag);
-        });
+
+	var elems = options.scope.querySelectorAll(options.selector);
+
+	[].forEach.call(elems, function(el) {
+
+		var split = el.textContent.split('');
+		var frag = document.createDocumentFragment();
+		split.forEach(function(letter) {
+			var span = document.createElement('span');
+			span.textContent = letter;
+			span.setAttribute('data-letter', letter);
+			span.className = options.segmentClass;
+			frag.appendChild(span);
+
+		});
+		el.textContent = null;
+		el.appendChild(frag);
+	});
 
 }
 
