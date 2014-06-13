@@ -1,6 +1,6 @@
 {
   "name": "letterify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Inspired by lettering.js - a browserifiable module for doing radical web typography",
   "main": "index.js",
   "scripts": {
