@@ -13,7 +13,6 @@ function letterify(userOptions) {
 		});
 	}
 
-
 	var selected;
 
 	if (!options.selector) {
