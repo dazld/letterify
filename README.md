@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/letterify.svg)](http://badge.fury.io/js/letterify)
+
+
 # Letterify
 
 ![letterify](https://raw.githubusercontent.com/dazld/letterify/master/letterify.png)
