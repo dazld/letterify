@@ -13,7 +13,7 @@ There are quite a few packages available that will split text into a series of s
 
 As an example, this means you can kern letter pairs quite easily in css, like so:
 
-```
+```html
 
 <style type="text/css">
     [data-letter="Y"] + [data-letter="o"] {
