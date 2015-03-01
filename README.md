@@ -7,6 +7,35 @@
 
 Inspired by lettering.js - a commonJS, browserifiable module for doing radical web typography
 
+## What's different here?
+
+There are quite a few packages available that will split text into a series of spans. `letterify` has one enhancement - it adds a custom attribute to the created spans which is the content inside it. This means that you can target particular letters, or letter pairs, other combinations etc, with css.
+
+As an example, this means you can kern letter pairs quite easily in css, like so:
+
+```
+
+<style type="text/css">
+    [data-letter="Y"] + [data-letter="o"] {
+        letter-spacing: -0.1rem;
+    }
+</style>
+
+<!-- before -->
+<h1>Yo</h1>
+
+<!-- after letterifying -->
+<h1 class="letterified-parent">
+    <span data-letter="Y" class="letterified">Y</span>
+    <span data-letter="o" class="letterified">o</span>
+</h1>
+
+<!-- Whitespace above is just for clarity here, in the document there is no additional whitespace -->
+
+```
+
+You can see a more elaborated demo on [codepen](http://codepen.io/dazld/pen/VYdZYN), combining fades and animations.
+
 ## API
 
 ```js
